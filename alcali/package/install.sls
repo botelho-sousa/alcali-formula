@@ -12,8 +12,15 @@
       'Arch': ['mariadb-libs'],
       'Debian': ['default-libmysqlclient-dev', 'python3-dev'],
       'FreeBSD': ['curl'],
+<<<<<<< HEAD
   }.get(grains.os_family,[]) %}
 {% elif alcali.config.db_backend == 'postgresql' %}
+=======
+  }.get(grains.os_family) %}
+{% endif %}
+
+{% if alcali.config.db_backend == 'postgresql' %}
+>>>>>>> 8fa4127650b6a561c63947309a62c6bb8c85b04d
   {% set db_connector = 'psycopg2' %}
   {% set db_requirements = {
       'RedHat': ['libpq-devel', 'python3-devel'],
